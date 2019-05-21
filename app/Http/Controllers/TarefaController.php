@@ -20,7 +20,7 @@ class TarefaController extends Controller
     
     public function create()
     {
-        return view('cadastrar_tarefas');
+        return view('cadastrarTarefa');
     }
 
     
@@ -33,7 +33,6 @@ class TarefaController extends Controller
         $tarefas->status = $request->input("status");
         $tarefas->data_conclu = $request->input("ldata_conclu");
         $tarefas->senha = $request->input("senha");
-        $tarefas->dataNasc = $request->input("DataNasc");
         $tarefas->save();
         return redirect()->route('tarefas.index');
     }
@@ -59,7 +58,6 @@ class TarefaController extends Controller
         $tarefas->status = $request->input("status");
         $tarefas->data_conclu = $request->input("data_conclu");
         $tarefas->senha = $request->input("senha");
-        $tarefas->dataNasc = $request->input("DataNasc");
         $tarefas->save();
         return redirect()->route('tarefas.index');
     }
