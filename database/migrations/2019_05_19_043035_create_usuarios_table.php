@@ -21,7 +21,7 @@ class CreateUsuariosTable extends Migration
             $table->string('email');
             $table->string('telefone');
             $table->string('login');
-            $table->string('senha');
+            $table->string('password');
             $table->timestamps();
         });
     }

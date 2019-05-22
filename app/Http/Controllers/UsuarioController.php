@@ -32,7 +32,7 @@ class UsuarioController extends Controller
         $usuarios->email = $request->input("email");
         $usuarios->telefone = $request->input("telefone");
         $usuarios->login = $request->input("login");
-        $usuarios->senha = $request->input("senha");
+        $usuarios->senha = $request->input("password");
         $usuarios->dataNasc = $request->input("DataNasc");
         $usuarios->save();
         return redirect()->route('usuarios.index');

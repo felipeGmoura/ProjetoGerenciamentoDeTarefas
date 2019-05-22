@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Senha') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -77,7 +77,7 @@
                         <div class="form-group row">
                             <label class="col-md-4 col-form-label text-md-right" for="inputState">Sexo</label>
                             <div class="form-group col-md-4">
-                                <select id="sexoselec" class="form-control">
+                                <select id="sexo" class="form-control">
                                     <option selected>Masculino</option>
                                     <option selected>Feminino</option>
                                     <option selected>Outros</option>
@@ -104,11 +104,24 @@
                                 </head>
                                 <body>
         
-                                <p>Data de Nasc.: <input type="text" id="datepicker"></p>
+                                <p>Data de Nasc.: <input type="text" id="data_nascimento"></p>
         
         
                                 </body>
                                 </html>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="telefonecell" class="col-md-4 col-form-label text-md-right">{{ __('telefone/cell') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="telefonecell" type="text" class="form-control @error('telefonecell') is-invalid @enderror" name="telefonecell" value="{{ old('telefonecell') }}" required autocomplete="telefonecell" autofocus>
+
+                                @error('nome')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
                         <div class="form-group row mb-0">
