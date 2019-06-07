@@ -41,7 +41,7 @@ class TarefaController extends Controller
     
     public function edit(tipotarefa $tipotarefa)
     {
-        return view('tipotarefa_editar', compact('tipotarefa'));
+        return view('editarTipotarefa', compact('tipotarefa'));
     }
 
     
