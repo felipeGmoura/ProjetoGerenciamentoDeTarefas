@@ -15,12 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::group(['middleware'=>'web'], function(){
-    Route::get('/', 'HomeController@index');
+    //Route::get('/', 'HomeController@index');
     
     Auth::routes();
 
+
+    Route::resource('tarefa', 'TarefaController');
+    Route::resource('usuario', 'UsuarioController');
+    Route::resource('tipotarefa', 'TipoTarefaController');
     Route::get('/home', 'HomeController@index')->name('home');
 
 });
