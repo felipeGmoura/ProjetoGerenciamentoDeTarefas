@@ -1,15 +1,15 @@
-@extends('layout.base', ["current"=>"categorias"])
+@extends('layout.base', ["current"=>"Tarefa"])
 
 @section('body')
 <form action = "{{route('Tarefa.store')}}" method = "POST">
         @csrf
         <div class = "form-group">
-            <h1>Cadastro de Título</h1>
-            <label for="titulo">Título: </label>
+            <h1>Cadastramento de Tarefa</h1>
+            <label for="titulo">Título </label>
             <input type = "text" class = "form-control" id="titulo" name="titulo">
             <br>
-            <label for="descricao">Descrição: </label>
-            <input type = "text" class = "form-control" id="descricao" name="descricao">
+            <label for="descricaoTarefa">Descrição </label>
+            <input type = "text" class = "form-control" id="descricaoTarefa" name="descricaoTarefa">
             <label for="inputState">Privacidade</label>
             <select id="sexoselec" class="form-control">
                 <option selected>Pública</option>
@@ -37,11 +37,14 @@
             </head>
             <body>
         
-            <p>Data de Conclução: <input type="text" id="datepicker"></p>
+            <p>Data de Conclução: <input type="text" id="data_conclu"></p>
         
         
             </body>
             </html>
+            <label for="tipotarefa_id">Identificação tipo tarefa </label>
+            <input type = "text" class = "form-control" id="tipotarefa_id" name="tipotarefa_id" >
+
 
             <button class = "btn btn-primary" type = "submit">Cadastrar!</button>
         </div>

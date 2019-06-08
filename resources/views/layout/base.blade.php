@@ -16,46 +16,43 @@
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>CRUD</h3>
+                <h3>Gerenciamento de Tarefas</h3>
             </div>
 
             <ul class="list-unstyled components">
                 <li @if($current == "principal") class = "active" @endif>
                     <a href="/">Página Inicial</a>
                 </li>
-                <li @if($current == "categorias") class = "active" @endif>
-                    <a href="#categoriasSubmenu"  data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Categorias</a>
-                    <ul class="collapse list-unstyled" id="categoriasSubmenu">
+                <li @if($current == "tarefas") class = "active" @endif>
+                    <a href="#tarefasSubmenu"  data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Tarefa</a>
+                    <ul class="collapse list-unstyled" id="tarefasSubmenu">
                         <li>
-                            <a href="{{route('categorias.create')}}">Nova</a>
+                            <a href="{{route('tarefas.create')}}">Nova</a>
                         </li>
                         <li>
-                            <a href="{{route('categorias.index')}}">Listar</a>
-                        </li>
-                        <li>
-                            <a href="{{route('categorias.restaurar')}}">Restaurar</a>
+                            <a href="{{route('tarefas.index')}}">Listar</a>
                         </li>
                     </ul>
                 </li>
-                <li @if($current == "produtos") class = "active" @endif >
-                    <a href="#produtosSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Produtos</a>
-                    <ul class="collapse list-unstyled" id="produtosSubmenu">
+                <li @if($current == "tipotarefas") class = "active" @endif >
+                    <a href="#tipotarefasSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Tipo de tarefa</a>
+                    <ul class="collapse list-unstyled" id="tipotarefasSubmenu">
                         <li>
-                            <a href="{{route('produtos.create')}}">Novo</a>
+                            <a href="{{route('tipotarefas.create')}}">Novo</a>
                         </li>
                         <li>
-                            <a href="{{route('produtos.index')}}">Listar</a>
+                            <a href="{{route('tipotarefas.index')}}">Listar</a>
                         </li>
                     </ul>
                 </li>
-                <li @if($current == "clientes") class = "active" @endif>
-                    <a href="#clientesSubmenu"  data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Clientes</a>
-                    <ul class="collapse list-unstyled" id="clientesSubmenu">
+                <li @if($current == "users") class = "active" @endif >
+                    <a href="#usersSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Usuário</a>
+                    <ul class="collapse list-unstyled" id="usersSubmenu">
                         <li>
-                            <a href="/clientes/novo">Nova</a>
-                        </li>
+                            <a href="{{route('users.edit', Auth::user()->id)}}">Editar </a>
+                        </li>                     
                         <li>
-                            <a href="/clientes">Listar</a>
+                            <a href="{{route('users.index')}}">Listar</a>
                         </li>
                     </ul>
                 </li>

@@ -9,7 +9,7 @@ class UsuarioController extends Controller
     public function index()
     {
         $usuarios = Usuario::all();
-        return view('usuarios_listar', compact('usuarios'));
+        return view('listarUsuario', compact('usuarios'));
     }
     
     public function __construct()
@@ -20,20 +20,20 @@ class UsuarioController extends Controller
     
     public function create()
     {
-        return view('cadastrar_tarefas');
+        return view('cadastrarTarefa');
     }
 
     
     public function store(Request $request)
     {
         $usuarios = new Usuario();
-        $usuarios->nome = $request->input("nome");
+        $usuarios->name = $request->input("name");
         $usuarios->sexo = $request->input("sexo");
         $usuarios->email = $request->input("email");
         $usuarios->telefone = $request->input("telefone");
         $usuarios->login = $request->input("login");
         $usuarios->senha = $request->input("password");
-        $usuarios->dataNasc = $request->input("DataNasc");
+        $usuarios->data_nascimento = $request->input("data_nascimento");
         $usuarios->save();
         return redirect()->route('usuarios.index');
     }
@@ -47,19 +47,19 @@ class UsuarioController extends Controller
     
     public function edit(Usuarios $usuarios)
     {
-        return view('usuarios_editar', compact('usuarios'));
+        return view('editarUsuario', compact('usuarios'));
     }
 
     
     public function update(Request $request, Usuarios $usuarios)
     {
-        $usuarios->nome = $request->input("nome");
+        $usuarios->name = $request->input("name");
         $usuarios->sexo = $request->input("sexo");
         $usuarios->email = $request->input("email");
         $usuarios->telefone = $request->input("telefone");
         $usuarios->login = $request->input("login");
         $usuarios->senha = $request->input("senha");
-        $usuarios->dataNasc = $request->input("DataNasc");
+        $usuarios->data_nascimento = $request->input("data_nascimento");
         $usuarios->save();
         return redirect()->route('usuarios.index');
     }

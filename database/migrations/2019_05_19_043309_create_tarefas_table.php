@@ -17,11 +17,11 @@ class CreateTarefasTable extends Migration
             $table->bigIncrements('id');
             $table->string('titulo');
             $table->string('privacidade');
-            $table->string('descricao');
+            $table->string('descricaoTarefa');
             $table->string('status');
-            $table->datetime('data_conclusao');
+            $table->datetime('data_conclu');
             $table->bigInteger('usuario_id')->unsigned()->nullable();
-            $table->foreign('usuario_id')->references('id')->on('usuarios');
+            $table->foreign('usuario_id')->references('id')->on('users');
             $table->bigInteger('tipotarefa_id')->unsigned()->nullable();
             $table->foreign('tipotarefa_id')->references('id')->on('tipo_tarefas');
             $table->timestamps();

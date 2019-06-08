@@ -15,7 +15,7 @@ class CreateTipoTarefasTable extends Migration
     {
         Schema::create('tipo_tarefas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome');
+            $table->string('name');
             $table->timestamps();
         });
     }

@@ -9,7 +9,7 @@ class TarefaController extends Controller
     public function index()
     {
         $tipotarefa = Tarefa::all();
-        return view('tipotarefa_listar', compact('tipotarefa'));
+        return view('listartipotarefa', compact('tipotarefa'));
     }
     
     public function __construct()

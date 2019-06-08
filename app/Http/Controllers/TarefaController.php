@@ -9,7 +9,7 @@ class TarefaController extends Controller
     public function index()
     {
         $tarefas = Tarefa::all();
-        return view('tarefas_listar', compact('tarefas'));
+        return view('listarTarefa', compact('tarefas'));
     }
     
     public function __construct()
@@ -46,7 +46,7 @@ class TarefaController extends Controller
     
     public function edit(tarefas $tarefas)
     {
-        return view('tarefas_editar', compact('tarefas'));
+        return view('editarTarefa', compact('tarefas'));
     }
 
     

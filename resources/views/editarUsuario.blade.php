@@ -1,10 +1,14 @@
 @extends('layout.base', ["current"=>"users"])
 
-@section('body')
-<form action = "{{route('users.store')}}" method = "POST">
+@section('body')  
+@php
+$user= Auth::user();
+@endphp  
+    <form action = "{{ route('users.update', $user) }}" method = "POST">
         @csrf
+        @method('PUT')
         <div class = "form-group">
-            <h1>Cadastro de Usuário</h1>
+            <h1>Edide seu usuário</h1>
             <label for="name">Nome: </label>
             <input type = "text" class = "form-control" id="name" name="name">
             <br>
@@ -48,8 +52,7 @@
                     </html>
                 </div>
             </div>
-            <button class = "btn btn-primary" type = "submit">Cadastrar!</button>
+            <button class = "btn btn-primary" type = "submit">Editar</button>
         </div>
     </form>
-
 @endsection
