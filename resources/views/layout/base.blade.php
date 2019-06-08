@@ -16,32 +16,32 @@
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Gerenciamento de Tarefas</h3>
+                <h3>Gerenciamento de Tarefa</h3>
             </div>
 
             <ul class="list-unstyled components">
                 <li @if($current == "principal") class = "active" @endif>
                     <a href="/">Página Inicial</a>
                 </li>
-                <li @if($current == "tarefas") class = "active" @endif>
-                    <a href="#tarefasSubmenu"  data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Tarefa</a>
-                    <ul class="collapse list-unstyled" id="tarefasSubmenu">
+                <li @if($current == "tarefa") class = "active" @endif>
+                    <a href="#tarefaSubmenu"  data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Tarefa</a>
+                    <ul class="collapse list-unstyled" id="tarefaSubmenu">
                         <li>
-                            <a href="{{route('tarefas.create')}}">Nova</a>
+                            <a href="{{route('tarefa.create')}}">Nova</a>
                         </li>
                         <li>
-                            <a href="{{route('tarefas.index')}}">Listar</a>
+                            <a href="{{route('tarefa.index')}}">Listar</a>
                         </li>
                     </ul>
                 </li>
-                <li @if($current == "tipotarefas") class = "active" @endif >
-                    <a href="#tipotarefasSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Tipo de tarefa</a>
-                    <ul class="collapse list-unstyled" id="tipotarefasSubmenu">
+                <li @if($current == "tipotarefa") class = "active" @endif >
+                    <a href="#tipotarefaSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Tipo de tarefa</a>
+                    <ul class="collapse list-unstyled" id="tipotarefaSubmenu">
                         <li>
-                            <a href="{{route('tipotarefas.create')}}">Novo</a>
+                            <a href="{{route('tipotarefa.create')}}">Novo</a>
                         </li>
                         <li>
-                            <a href="{{route('tipotarefas.index')}}">Listar</a>
+                            <a href="{{route('tipotarefa.index')}}">Listar</a>
                         </li>
                     </ul>
                 </li>
